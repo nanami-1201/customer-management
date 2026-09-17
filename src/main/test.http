@@ -1,0 +1,59 @@
+POST http://localhost:8080/customers
+Content-Type: application/json
+Authorization: Bearer eyJraWQiOiJoSUc1VF9jbmpRMzZOZ3JWMmxoc05ETU1zWGJ5ZlZMc05NMUtkMWJmOGhrIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJuYW1lIjoi44Gq44Gq44G_Iiwic3ViIjoibmFuYW1pMkBleGFtcGxlLmNvbSIsImV4cCI6MTc4OTIxNDA3OCwiaWF0IjoxNzg5MjEwNDc4fQ.n9z4q4De_CWgSnEVNrlLHLyU22nr7nmj4yiT5daI-zE
+
+{
+  "name": "山田太郎",
+  "phone": "09012345678",
+  "staff": "ななみ",
+  "company": "ABC株式会社",
+  "firstVisitDate": "2026-08-06",
+  "referrer": "紹介",
+  "businessCard": true,
+  "memo": "テスト登録"
+}
+
+###
+POST http://localhost:8080/customers
+Content-Type: application/json
+
+{
+  "name": "佐藤花子",
+  "phone": "08098765432",
+  "staff": "北辰",
+  "company": "XYZ株式会社",
+  "firstVisitDate": "2026-08-07",
+  "referrer": "ホームページ",
+  "businessCard": false,
+  "memo": "2件目"
+}
+
+
+###
+
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "email": "nanami2@example.com",
+  "password": "test1234"
+}
+
+###
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+    "name": "ななみ",
+    "email": "nanami2@example.com",
+    "password": "test1234"
+}
+
+### 重複ユーザー整理
+POST http://localhost:8080/users/cleanup
+Content-Type: application/json
+
+{
+    "email": "nanami2@example.com"
+
+}
